@@ -1,13 +1,11 @@
-package com.booking.dto;
+package com.booking.dto.hotel;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
 
 @Data
 @Builder
-public class RoomDto {
+public class HotelDto {
     private String name;
     private Integer maxMembers;
     private Integer currentMembers;

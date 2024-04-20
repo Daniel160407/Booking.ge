@@ -1,7 +1,7 @@
-package com.booking.service;
+package com.booking.service.room;
 
-import com.booking.dto.RoomCollectionDto;
-import com.booking.dto.RoomDto;
+import com.booking.dto.room.RoomCollectionDto;
+import com.booking.dto.room.RoomDto;
 import com.booking.model.Room;
 import com.booking.util.ModelConverter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class RoomServiceImpl implements RoomService {
 
     @Override
     public RoomCollectionDto getRooms() {
-        return modelConverter.convert(new ArrayList<>(rooms.values()));
+        return modelConverter.convertRooms(new ArrayList<>(rooms.values()));
     }
 
     @Override

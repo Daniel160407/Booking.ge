@@ -1,8 +1,7 @@
-package com.booking.service;
+package com.booking.service.room;
 
-import com.booking.dto.RoomCollectionDto;
-import com.booking.dto.RoomDto;
-import com.booking.model.Room;
+import com.booking.dto.room.RoomCollectionDto;
+import com.booking.dto.room.RoomDto;
 import org.springframework.stereotype.Service;
 
 @Service

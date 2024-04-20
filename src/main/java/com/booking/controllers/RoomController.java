@@ -1,8 +1,8 @@
 package com.booking.controllers;
 
-import com.booking.dto.RoomCollectionDto;
-import com.booking.dto.RoomDto;
-import com.booking.service.RoomService;
+import com.booking.dto.room.RoomCollectionDto;
+import com.booking.dto.room.RoomDto;
+import com.booking.service.room.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

@@ -1,6 +1,5 @@
-package com.booking.dto;
+package com.booking.dto.room;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
