@@ -9,4 +9,6 @@ public interface RoomService {
     RoomCollectionDto getRooms();
 
     RoomDto addRoom(RoomDto roomDto);
+
+    RoomDto updateRoom(RoomDto roomDto);
 }

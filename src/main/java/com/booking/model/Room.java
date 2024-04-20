@@ -4,5 +4,5 @@ import com.booking.util.RoomState;
 import lombok.Builder;
 
 @Builder
-public record Room(String name, RoomState roomState) {
+public record Room(String name, String hotelName, RoomState roomState) {
 }

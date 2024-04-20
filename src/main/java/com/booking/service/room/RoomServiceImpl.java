@@ -32,4 +32,10 @@ public class RoomServiceImpl implements RoomService {
         rooms.put(room.name(), room);
         return roomDto;
     }
+
+    @Override
+    public RoomDto updateRoom(RoomDto roomDto) {
+        rooms.put(roomDto.getName(), modelConverter.convert(roomDto));
+        return roomDto;
+    }
 }

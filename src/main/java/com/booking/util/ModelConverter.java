@@ -26,6 +26,7 @@ public class ModelConverter {
     private RoomDto convertRoomToDto(Room room) {
         return RoomDto.builder()
                 .name(room.name())
+                .hotelName(room.hotelName())
                 .roomState(room.roomState())
                 .build();
     }
@@ -33,6 +34,7 @@ public class ModelConverter {
     public Room convert(RoomDto roomDto) {
         return Room.builder()
                 .name(roomDto.getName())
+                .hotelName(roomDto.getHotelName())
                 .roomState(roomDto.getRoomState())
                 .build();
     }
