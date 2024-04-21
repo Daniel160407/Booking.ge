@@ -3,7 +3,6 @@ package com.booking.controllers;
 import com.booking.dto.room.RoomCollectionDto;
 import com.booking.dto.room.RoomDto;
 import com.booking.service.room.RoomService;
-import com.booking.util.RoomState;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -33,7 +32,7 @@ public class RoomController {
         return roomService.addRoom(roomDto);
     }
 
-    @PutMapping (value = "/state")
+    @PutMapping
     @ResponseBody
     public RoomDto changeRoomState(@RequestBody RoomDto roomDto) {
         return roomService.updateRoom(roomDto);

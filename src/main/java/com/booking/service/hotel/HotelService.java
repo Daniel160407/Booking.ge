@@ -9,4 +9,6 @@ public interface HotelService {
     HotelDto addHotel(HotelDto hotel);
 
     HotelCollectionDto getHotels();
+
+    HotelCollectionDto updateHotel(String name);
 }

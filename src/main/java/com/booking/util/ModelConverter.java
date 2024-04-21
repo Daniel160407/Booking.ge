@@ -25,9 +25,9 @@ public class ModelConverter {
 
     private RoomDto convertRoomToDto(Room room) {
         return RoomDto.builder()
-                .name(room.name())
-                .hotelName(room.hotelName())
-                .roomState(room.roomState())
+                .name(room.getName())
+                .hotelName(room.getHotelName())
+                .roomState(room.getRoomState())
                 .build();
     }
 
@@ -51,9 +51,9 @@ public class ModelConverter {
 
     private HotelDto convertHotelToDto(Hotel hotel) {
         return HotelDto.builder()
-                .name(hotel.name())
-                .maxMembers(hotel.maxMembers())
-                .currentMembers(hotel.currentMembers())
+                .name(hotel.getName())
+                .maxMembers(hotel.getMaxMembers())
+                .currentMembers(hotel.getCurrentMembers())
                 .build();
     }
 

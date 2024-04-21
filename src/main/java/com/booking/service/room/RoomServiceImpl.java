@@ -9,9 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class RoomServiceImpl implements RoomService {
@@ -27,7 +25,7 @@ public class RoomServiceImpl implements RoomService {
     public RoomCollectionDto getRooms(String hotelName) {
         List<Room> rooms = new ArrayList<>();
         for (Room room : this.rooms) {
-            if (room.hotelName().equals(hotelName) && room.roomState() == RoomState.FREE) {
+            if (room.getHotelName().equals(hotelName) && room.getRoomState() == RoomState.FREE) {
                 rooms.add(room);
             }
         }
@@ -43,7 +41,7 @@ public class RoomServiceImpl implements RoomService {
 
     @Override
     public RoomDto updateRoom(RoomDto roomDto) {
-        rooms.removeIf(room -> room.hotelName().equals(roomDto.getHotelName()) && room.name().equals(roomDto.getName()));
+        rooms.removeIf(room -> room.getHotelName().equals(roomDto.getHotelName()) && room.getName().equals(roomDto.getName()));
         Room room = modelConverter.convert(roomDto);
         rooms.add(room);
         return roomDto;

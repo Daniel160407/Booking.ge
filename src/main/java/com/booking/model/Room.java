@@ -2,7 +2,14 @@ package com.booking.model;
 
 import com.booking.util.RoomState;
 import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
 @Builder
-public record Room(String name, String hotelName, RoomState roomState) {
+@Setter
+@Getter
+public class Room {
+    private String name;
+    private String hotelName;
+    private RoomState roomState;
 }
