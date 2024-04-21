@@ -5,11 +5,14 @@ import com.booking.dto.room.RoomDto;
 import com.booking.service.room.RoomService;
 import com.booking.util.RoomState;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/Booking/rooms")
+@CrossOrigin(origins = "*")
 public class RoomController {
     private final RoomService roomService;
 
@@ -20,8 +23,8 @@ public class RoomController {
 
     @GetMapping
     @ResponseBody
-    public RoomCollectionDto getRooms() {
-        return roomService.getRooms();
+    public RoomCollectionDto getRooms(@RequestParam String hotelName) {
+        return roomService.getRooms(hotelName);
     }
 
     @PostMapping
@@ -30,9 +33,14 @@ public class RoomController {
         return roomService.addRoom(roomDto);
     }
 
-    @PostMapping(value = "/state")
+    @PutMapping (value = "/state")
     @ResponseBody
-    public RoomDto changeRoomState(@RequestParam String roomName, @RequestParam String hotelName, @RequestParam RoomState state) {
-        return roomService.updateRoom(new RoomDto(roomName, hotelName, state));
+    public RoomDto changeRoomState(@RequestBody RoomDto roomDto) {
+        return roomService.updateRoom(roomDto);
+    }
+
+    @RequestMapping(method = RequestMethod.OPTIONS)
+    public ResponseEntity<?> handleOptions() {
+        return ResponseEntity.ok().allow(HttpMethod.GET, HttpMethod.POST, HttpMethod.PUT, HttpMethod.OPTIONS).build();
     }
 }

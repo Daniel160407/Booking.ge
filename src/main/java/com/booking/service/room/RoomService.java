@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface RoomService {
-    RoomCollectionDto getRooms();
+    RoomCollectionDto getRooms(String hotelName);
 
     RoomDto addRoom(RoomDto roomDto);
 

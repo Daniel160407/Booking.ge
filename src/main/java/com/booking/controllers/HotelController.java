@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/Booking/hotels")
+@CrossOrigin(origins = "*")
 public class HotelController {
     private final HotelService hotelService;
 
